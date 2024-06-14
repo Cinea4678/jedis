@@ -38,6 +38,10 @@ public class Connection implements Closeable {
   private int infiniteSoTimeout = 0;
   private boolean broken = false;
 
+  public RedisOutputStream getOutputStream() {
+    return this.outputStream;
+  }
+
   public Connection() {
     this(Protocol.DEFAULT_HOST, Protocol.DEFAULT_PORT);
   }
